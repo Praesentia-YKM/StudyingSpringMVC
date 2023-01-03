@@ -23,5 +23,7 @@ import java.util.List;
             String viewPath = "/WEB-INF/views/members.jsp";
             RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
             dispatcher.forward(request, response);
+            System.out.println("request.getMethod() = " + request.getMethod()); //GET
+            System.out.println("request.getProtocol() = " + request.getProtocol());
         }
 }
