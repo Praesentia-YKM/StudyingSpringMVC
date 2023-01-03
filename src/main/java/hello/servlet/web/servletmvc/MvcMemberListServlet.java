@@ -14,9 +14,7 @@ import java.util.List;
         public class MvcMemberListServlet extends HttpServlet {
         private MemberRepository memberRepository = MemberRepository.getInstance();
         @Override
-        protected void service(HttpServletRequest request, HttpServletResponse
-                response)
-                throws ServletException, IOException {
+        protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             System.out.println("MvcMemberListServlet.service");
             List<Member> members = memberRepository.findAll();
             request.setAttribute("members", members);
@@ -25,5 +23,7 @@ import java.util.List;
             dispatcher.forward(request, response);
             System.out.println("request.getMethod() = " + request.getMethod()); //GET
             System.out.println("request.getProtocol() = " + request.getProtocol());
+            response.setContentType("text/html");
+            response.setCharacterEncoding("utf-8");
         }
 }
