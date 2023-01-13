@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-@WebServlet(name = "frontControllerServletV1", urlPatterns = "/frontcontroller/ v1/*")
+@WebServlet(name = "frontControllerServletV1", urlPatterns = "/frontcontroller/v1/*")
 // *의 의미 : v1/ 하위에 어떤  url이 들어와도 일단 이 서블릿이 무조건 호출된다.
 public class FrontControllerServletV1 extends HttpServlet {
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
