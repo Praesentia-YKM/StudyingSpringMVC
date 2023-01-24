@@ -39,7 +39,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         ModelView mv = controller.process(paramMap);
         String viewName = mv.getViewName();
         myView view = viewResolver(viewName);
-        view.render(mv.getModel(), request, response);
+        view.render(mv.getModel(), request, response); //render를 호출하면서 model을 넘김
     }
     private Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap = new HashMap<>();
