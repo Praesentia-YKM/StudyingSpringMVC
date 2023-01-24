@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class MemberSaveControllerV2 implements ControllerV2 {
     private MemberRepository memberRepository = MemberRepository.getInstance();
@@ -19,6 +20,8 @@ public class MemberSaveControllerV2 implements ControllerV2 {
         Member member = new Member(username, age);
         memberRepository.save(member);
         request.setAttribute("member", member);
+        List<Member> members = memberRepository.findAll();
+        request.setAttribute("members", members);
         return new myView("/WEB-INF/views/save-result.jsp");
     }
 }
